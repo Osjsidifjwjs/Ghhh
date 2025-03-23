@@ -412,18 +412,18 @@ end
 local AvatarClipboard = nil
 local AvatarClipboardName = "Unnamed"
 
-local Section = Tab:CreateSection("Avatar Clipboard")
-Section:Set("Avatar Clipboard")
+local Section = Tab:CreateSection("Avatar Copiado 🇧🇷")
+Section:Set("Avatar Copiado 🇧🇷")
 
 local function copyToClip(data, name)
     if not data then
         AvatarClipboard = nil
         AvatarClipboardName = "Unnamed"
-        Section:Set("Avatar Clipboard")
+        Section:Set("Avatar Copiado 🇧🇷")
     else
         AvatarClipboard = data
         AvatarClipboardName = name
-        Section:Set("Avatar Clipboard: " .. name)
+        Section:Set("Avatar Copiado 🇧🇷: " .. name)
     end
 end
 
@@ -432,7 +432,7 @@ local function LoadPlayer(player)
         if player ~= Players.LocalPlayer then
             local function LoadCharacter(character)
                 local prox = Instance.new("ProximityPrompt", character:WaitForChild("HumanoidRootPart"))
-                prox.ActionText = "Copy Avatar To Clipboard"
+                prox.ActionText = "🇧🇷 Copiar avatar 🇧🇷"
                 prox.ObjectText = player.DisplayName
                 prox.KeyboardKeyCode = Enum.KeyCode.C
                 prox.HoldDuration = 0
