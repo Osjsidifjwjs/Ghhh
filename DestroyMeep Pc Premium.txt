@@ -1765,8 +1765,7 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local MainTab = Window:CreateTab("Size",105065053321743)
-local MainSection = MainTab:CreateSection("Aumentar tamanho")
+local Tab = Window:CreateTab("Avatar",109650706901296)
 
 local Button = Tab:CreateButton({
    Name = "Virar criança",
