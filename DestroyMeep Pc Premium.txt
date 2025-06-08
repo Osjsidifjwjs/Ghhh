@@ -1655,22 +1655,135 @@ local Window = Rayfield:CreateWindow({
     LoadingSubtitle = "Aguarde um momento...",
 })
 
-local Tab = Window:CreateTab("Avatar",109650706901296)
 
--- Criar o Textbox para inserir o nome de usuário
-local LoadAvatarFromUsernameInput = Tab:CreateInput({
-    Name = "Carregar avatar por nickname",
-    CurrentValue = "",
-    PlaceholderText = "Insira o nickname",
-    RemoveTextAfterFocusLost = false,
-    Flag = "LoadAvatarUsername",
-    Callback = function(username)
-        if username and username ~= "" then
-            LoadAvatarFromUsername(username)
-        else
-            print("Por favor, insira um nome de usuário válido.")
+local Tab = Window:CreateTab("Avatar",93714834687143) -- Title, Image
+
+local function colorToTable(clr)
+    return {tostring(clr.R * 255), tostring(clr.G * 255), tostring(clr.B * 255)}
+end
+
+local function ExtractData(humdes)
+    local ava = {}
+
+    for _, v in pairs({"WidthScale", "HeightScale", "DepthScale", "BodyTypeScale", "ProportionScale", "HeadScale"}) do
+        ava[v] = humdes[v]
+    end
+
+    for _, v in pairs({"Face", "Head", "LeftArm", "RightArm", "LeftLeg", "RightLeg", "Torso"}) do
+        ava[v] = humdes[v]
+    end
+
+    for _, v in pairs({"HeadColor", "LeftArmColor", "RightArmColor", "LeftLegColor", "RightLegColor", "TorsoColor"}) do
+        ava[v] = colorToTable(humdes[v])
+    end
+
+    for _, v in pairs({"GraphicTShirt", "Shirt", "Pants"}) do
+        ava[v] = humdes[v]
+    end
+
+    for _, v in pairs({"IdleAnimation", "RunAnimation", "JumpAnimation", "SwimAnimation", "WalkAnimation", "ClimbAnimation", "FallAnimation"}) do
+        ava[v] = humdes[v]
+    end
+
+    for _, v in pairs({"Hat", "Hair", "Back", "Face", "Front", "Neck", "Shoulders", "Waist"}) do
+        ava[v .. "Accessory"] = humdes[v .. "Accessory"]
+    end
+
+    local layered = humdes:GetAccessories(false)
+    for i, accessory in pairs(layered) do
+        if accessory.AccessoryType and typeof(accessory.AccessoryType) == "EnumItem" then
+            accessory.AccessoryType = accessory.AccessoryType.Name
         end
-    end,
+        accessory.Order = i
+    end
+    ava.AccessoryBlob = layered
+
+    ava.Emotes = humdes:GetEmotes()
+
+    return ava
+end
+
+
+local AvatarClipboard = nil
+local AvatarClipboardName = "Unnamed"
+
+local Section = Tab:CreateSection("Avatar Clipboard")
+Section:Set("Avatar Clipboard")
+
+local function copyToClip(data, name)
+    if not data then
+        AvatarClipboard = nil
+        AvatarClipboardName = "Unnamed"
+        Section:Set("Avatar Clipboard")
+    else
+        AvatarClipboard = data
+        AvatarClipboardName = name
+        Section:Set("Avatar Clipboard: " .. name)
+    end
+end
+
+local function LoadPlayer(player)
+    coroutine.wrap(function()
+        if player ~= Players.LocalPlayer then
+            local function LoadCharacter(character)
+                local prox = Instance.new("ProximityPrompt", character:WaitForChild("HumanoidRootPart"))
+                prox.ActionText = "Copy Avatar To Clipboard"
+                prox.ObjectText = player.DisplayName
+                prox.KeyboardKeyCode = Enum.KeyCode.C
+                prox.HoldDuration = 0
+                prox.RequiresLineOfSight = false
+                prox.Triggered:Connect(function()
+                    if character and character:FindFirstChild("Humanoid") and character.Humanoid:FindFirstChild("HumanoidDescription") then
+                        copyToClip(ExtractData(character.Humanoid.HumanoidDescription), player.DisplayName)
+                    end
+                end)
+            end
+            LoadCharacter(player.Character or player.CharacterAdded:Wait())
+            player.CharacterAdded:Connect(LoadCharacter)
+        end
+    end)()
+end
+
+for _, player in pairs(Players:GetPlayers()) do
+    LoadPlayer(player)
+end
+Players.PlayerAdded:Connect(LoadPlayer)
+
+Tab:CreateButton({
+    Name = "Copiar Avatar",
+    Callback = function()
+        if AvatarClipboard then
+            game:GetService("ReplicatedStorage").FunctionConnections.NewAESaveAvatar:InvokeServer(AvatarClipboard)
+        end
+    end
+})
+
+local LoadAvatarFromUserId = Tab:CreateInput({
+   Name = "Copiar Avatar pelo ID",
+   CurrentValue = "",
+   PlaceholderText = "Enter UserId",
+   RemoveTextAfterFocusLost = false,
+   Flag = "LoadAvatarUserId",
+   Callback = function(userid)
+      if userid and tonumber(userid) and Players:GetHumanoidDescriptionFromUserId(tonumber(userid)) then
+         local data = ExtractData(Players:GetHumanoidDescriptionFromUserId(tonumber(userid)))
+        game:GetService("ReplicatedStorage").FunctionConnections.NewAESaveAvatar:InvokeServer(data)
+      end
+   end,
+})
+
+local LoadAvatarFromUsername = Tab:CreateInput({
+   Name = "Copiar Avatar por Nickname",
+   CurrentValue = "",
+   PlaceholderText = "Enter Username",
+   RemoveTextAfterFocusLost = false,
+   Flag = "LoadAvatarUsername",
+   Callback = function(username)
+      if username and Players:GetUserIdFromNameAsync(username) then
+         local data = ExtractData(Players:GetHumanoidDescriptionFromUserId(Players:GetUserIdFromNameAsync(username)))
+          game:GetService("ReplicatedStorage").FunctionConnections.NewAESaveAvatar:InvokeServer(data)
+      end
+   end,
 })
 
 local Button = Tab:CreateButton({
