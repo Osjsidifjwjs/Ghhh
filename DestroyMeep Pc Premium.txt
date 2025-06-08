@@ -1674,13 +1674,6 @@ local LoadAvatarFromUsernameInput = Tab:CreateInput({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Menu acessórios por ID",
-   Callback = function()
-      loadstring(game:HttpGet("https://pastebin.com/raw/zFnqMmwF"))()
-    end,
-})
-
-local Button = Tab:CreateButton({
    Name = "Vestir todos os itens (Reiniciar para removê-los)",
    Callback = function()
       local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -1692,27 +1685,6 @@ local Button = Tab:CreateButton({
       for id = 0, 8000 do
           coroutine.wrap(tryID)(id)  
       end
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Virar criança",
-   Callback = function()
-      loadstring(game:HttpGet('https://pastebin.com/raw/zKyQLQ4w'))()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Virar adolescente",
-   Callback = function()
-      loadstring(game:HttpGet('https://pastebin.com/raw/Ms6iJXpL'))()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Virar adulto",
-   Callback = function()
-      loadstring(game:HttpGet('https://pastebin.com/raw/TYFqdwRN'))()
    end,
 })
 
@@ -1790,6 +1762,29 @@ local Button = Tab:CreateButton({
                Button1 = "ok"
            })
        end
+   end,
+})
+
+local MainTab = Window:CreateTab("Size",105065053321743)
+
+local Button = Tab:CreateButton({
+   Name = "Virar criança",
+   Callback = function()
+      loadstring(game:HttpGet('https://pastebin.com/raw/zKyQLQ4w'))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Virar adolescente",
+   Callback = function()
+      loadstring(game:HttpGet('https://pastebin.com/raw/Ms6iJXpL'))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Virar adulto",
+   Callback = function()
+      loadstring(game:HttpGet('https://pastebin.com/raw/TYFqdwRN'))()
    end,
 })
 
