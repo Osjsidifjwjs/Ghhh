@@ -1,0 +1,534 @@
+-- Dark Red Script GUI (Sem Rayfield)
+
+local ScreenGui = Instance.new("ScreenGui") local Frame = Instance.new("Frame") local Title = Instance.new("TextLabel") local Button1 = Instance.new("TextButton") local Button2 = Instance.new("TextButton")
+
+ScreenGui.Name = "DarkRedScriptGUI" ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui Frame.BackgroundColor3 = Color3.fromRGB(55, 0, 0) Frame.Position = UDim2.new(0.3, 0, 0.3, 0) Frame.Size = UDim2.new(0, 300, 0, 200) Frame.BorderSizePixel = 0
+
+Title.Parent = Frame Title.BackgroundColor3 = Color3.fromRGB(30, 0, 0) Title.Size = UDim2.new(1, 0, 0, 40) Title.Font = Enum.Font.SourceSansBold Title.Text = "How do you want to run the script?\nComo quer executar o script?" Title.TextColor3 = Color3.fromRGB(240, 240, 240) Title.TextSize = 18 Title.TextWrapped = true
+
+Button1.Parent = Frame Button1.BackgroundColor3 = Color3.fromRGB(75, 0, 0) Button1.Position = UDim2.new(0.1, 0, 0.5, -20) Button1.Size = UDim2.new(0.8, 0, 0, 30) Button1.Font = Enum.Font.SourceSansBold Button1.Text = "Sem efeito / No effect" Button1.TextColor3 = Color3.fromRGB(240, 240, 240) Button1.TextSize = 16 Button1.MouseButton1Click:Connect(function() debugX = true
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/pauloplinioloko/Hhhray/refs/heads/main/Ray'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "U N I T E D  H U B",
+   Icon = 0,
+   LoadingTitle = "W E L C O M E  T O  H E L L",
+   LoadingSubtitle = "by semnexo (scripts credits: Zynlope,Joao)",
+   Theme = "Default", 
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false,
+      Invite = "KQPZ8gtY", -- Apenas o código sem link!
+      RememberJoins = true
+   },
+
+   KeySystem = true,
+   KeySettings = {
+      Title = "SENHA/KEY",
+      Subtitle = "🖕 ",
+      Note = "KEY IN DISCORD",
+      FileName = "Key",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"nigga123"} -- Aqui você coloca sua key real se quiser
+   }
+})
+
+local Tab1 = Window:CreateTab("ZYNLOPE", "flame")
+local Section1 = Tab1:CreateSection("ZYNLOPE SCRIPTS")
+
+Tab1:CreateButton({
+   Name = "SYNOLOPE 1",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/meepcityhmm/refs/heads/main/hmmmm"))()
+   end,
+})
+
+Tab1:CreateButton({
+   Name = "SYNOLOPE 2",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/synoloperevival/refs/heads/main/hmmmmm"))()
+   end,
+})
+
+Tab1:CreateButton({
+   Name = "FE R6 RIFLE ANIMATION MEEPCITY",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/rifle-animations/refs/heads/main/hmmmm"))()
+   end,
+})
+
+
+local Tab2 = Window:CreateTab("JOÃO", "flame")
+local Section2 = Tab2:CreateSection("JOÃO SCRIPTS")
+
+Tab2:CreateButton({
+   Name = "MENU DO JOÃO",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/MENU%20DO%20JOAO"))()
+   end,
+})
+
+
+local Tab3 = Window:CreateTab("SEMNEXO", "flame")
+local Section3 = Tab3:CreateSection("MY SCRIPTS")
+
+Tab3:CreateButton({
+   Name = "COPY BRASIL (key: anexo)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/obf_B3QHXvzaE4DAAgdwMFIJq3GGB59s8W60i7q4Qms1Vh6ZKK65qJkgaEZzjY8Wya1l.lua%20(1).txt"))()
+   end,
+})
+
+Tab3:CreateButton({
+   Name = "MENU SEMNEXO (key: vlkniggas)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/obf_uam39VHkw5P5168Ao2yBVgFWZwbXo8TWilO4iK1Xj558jVcPVyrz1dBOej7Hn61B.lua.txt"))()
+   end,
+})
+
+Tab3:CreateButton({
+   Name = "FURNITURES OFFSALES/MOVEIS NAO A VENDA",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/OFFSALES"))()
+   end,
+})
+
+Rayfield:LoadConfiguration() ScreenGui.Enabled = false end)
+
+Button2.Parent = Frame Button2.BackgroundColor3 = Color3.fromRGB(75, 0, 0) Button2.Position = UDim2.new(0.1, 0, 0.5, 30) Button2.Size = UDim2.new(0.8, 0, 0, 30) Button2.Font = Enum.Font.SourceSansBold Button2.Text = "Com efeito / With effect" Button2.TextColor3 = Color3.fromRGB(240, 240, 240) Button2.TextSize = 16 Button2.MouseButton1Click:Connect(function() -- UNITED HUB INTRO COMPLETO (Velocidade Corrigida + Botão de Música Permanente)
+
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- 🎶 Música
+local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://99084314273118"
+sound.TimePosition = 6
+sound.Volume = 6
+sound:Play()
+
+-- 🔊 Botão de Música (GUI separada)
+local musicGui = Instance.new("ScreenGui", playerGui)
+musicGui.Name = "MusicControlGui"
+musicGui.ResetOnSpawn = false
+musicGui.IgnoreGuiInset = true
+
+local musicButton = Instance.new("TextButton", musicGui)
+musicButton.Size = UDim2.new(0, 30, 0, 30)
+musicButton.Position = UDim2.new(0, 10, 1, -40)
+musicButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+musicButton.BorderSizePixel = 0
+musicButton.Text = "⏸️"
+musicButton.TextScaled = true
+musicButton.TextColor3 = Color3.new(1,1,1)
+musicButton.BackgroundTransparency = 0.3
+
+local musicPaused = false
+musicButton.MouseButton1Click:Connect(function()
+	if musicPaused then
+		sound:Resume()
+		musicButton.Text = "⏸️"
+		musicPaused = false
+	else
+		sound:Pause()
+		musicButton.Text = "▶️"
+		musicPaused = true
+	end
+end)
+
+-- 🚀 INTRO GUI
+local introGui = Instance.new("ScreenGui", playerGui)
+introGui.Name = "UnitedHubIntro"
+introGui.ResetOnSpawn = false
+introGui.IgnoreGuiInset = true
+
+local frame = Instance.new("Frame", introGui)
+frame.Size = UDim2.new(0, 400, 0, 200)
+frame.Position = UDim2.new(0.5, -200, 0.5, -100)
+frame.BackgroundTransparency = 1
+
+local titleLabel = Instance.new("TextLabel", frame)
+titleLabel.Size = UDim2.new(1, 0, 0, 50)
+titleLabel.Position = UDim2.new(0, 0, 0, 0)
+titleLabel.BackgroundTransparency = 1
+titleLabel.Text = "UNITED HUB"
+titleLabel.TextColor3 = Color3.new(90,10,10)
+titleLabel.TextScaled = true
+titleLabel.Font = Enum.Font.GothamBold
+
+local loadingIcon = Instance.new("ImageLabel", frame)
+loadingIcon.Size = UDim2.new(0, 30, 0, 30)
+loadingIcon.Position = UDim2.new(0.5, -15, 0, 60)
+loadingIcon.BackgroundTransparency = 1
+loadingIcon.Image = "rbxassetid://6031091002"
+
+local barBack = Instance.new("Frame", frame)
+barBack.Size = UDim2.new(0, 300, 0, 20)
+barBack.Position = UDim2.new(0.5, -150, 0, 110)
+barBack.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+barBack.BorderSizePixel = 0
+
+local barFill = Instance.new("Frame", barBack)
+barFill.Size = UDim2.new(0, 0, 1, 0)
+barFill.BackgroundColor3 = Color3.fromRGB(150, 20, 20)
+barFill.BorderSizePixel = 0
+
+local notification = Instance.new("TextLabel", introGui)
+notification.Size = UDim2.new(0, 200, 0, 50)
+notification.Position = UDim2.new(0.5, -100, 0.5, 120)
+notification.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+notification.BorderSizePixel = 0
+notification.Text = "✅ Concluído!"
+notification.TextColor3 = Color3.fromRGB(0, 255, 0)
+notification.TextScaled = true
+notification.Visible = false
+notification.BackgroundTransparency = 100
+notification.TextTransparency = 1
+
+-- ⚙️ Carregamento Suave com Velocidade Corrigida
+local progress = 0
+local rayfieldExecuted = false
+local currentSpeed = 0.05         -- Velocidade inicial maior
+local targetSpeed = 0.05
+local slowingDown = false
+local minSpeed = 0.015            -- Velocidade mínima garantida
+
+local function smoothStep(a, b, t)
+	return a + (b - a) * t
+end
+
+spawn(function()
+	while progress < 1 do
+		wait(0.05)
+
+		loadingIcon.Rotation = loadingIcon.Rotation + 10
+		currentSpeed = smoothStep(currentSpeed, targetSpeed, 0.1)
+
+		if currentSpeed < minSpeed then
+			currentSpeed = minSpeed
+		end
+
+		progress = math.min(progress + currentSpeed, 1)
+		barFill.Size = UDim2.new(progress, 0, 1, 0)
+
+		if progress >= 0.5 and not rayfieldExecuted then
+			rayfieldExecuted = true
+			debugX = true
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/pauloplinioloko/Hhhray/refs/heads/main/Ray'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "U N I T E D  H U B",
+   Icon = 0,
+   LoadingTitle = "W E L C O M E  T O  H E L L",
+   LoadingSubtitle = "by semnexo (scripts credits: Zynlope,Joao)",
+   Theme = "Default", 
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false,
+      Invite = "KQPZ8gtY", -- Apenas o código sem link!
+      RememberJoins = true
+   },
+
+   KeySystem = true,
+   KeySettings = {
+      Title = "SENHA/KEY",
+      Subtitle = "🖕 ",
+      Note = "KEY IN DISCORD",
+      FileName = "Key",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"nigga123"} -- Aqui você coloca sua key real se quiser
+   }
+})
+
+local Tab1 = Window:CreateTab("ZYNLOPE", "flame")
+local Section1 = Tab1:CreateSection("ZYNLOPE SCRIPTS")
+
+Tab1:CreateButton({
+   Name = "SYNOLOPE 1",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/meepcityhmm/refs/heads/main/hmmmm"))()
+   end,
+})
+
+Tab1:CreateButton({
+   Name = "SYNOLOPE 2",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/synoloperevival/refs/heads/main/hmmmmm"))()
+   end,
+})
+
+Tab1:CreateButton({
+   Name = "FE R6 RIFLE ANIMATION MEEPCITY",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/rifle-animations/refs/heads/main/hmmmm"))()
+   end,
+})
+
+
+local Tab2 = Window:CreateTab("JOÃO", "flame")
+local Section2 = Tab2:CreateSection("JOÃO SCRIPTS")
+
+Tab2:CreateButton({
+   Name = "MENU DO JOÃO",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/MENU%20DO%20JOAO"))()
+   end,
+})
+
+
+local Tab3 = Window:CreateTab("SEMNEXO", "flame")
+local Section3 = Tab3:CreateSection("MY SCRIPTS")
+
+Tab3:CreateButton({
+   Name = "COPY BRASIL (key: anexo)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/obf_B3QHXvzaE4DAAgdwMFIJq3GGB59s8W60i7q4Qms1Vh6ZKK65qJkgaEZzjY8Wya1l.lua%20(1).txt"))()
+   end,
+})
+
+Tab3:CreateButton({
+   Name = "MENU SEMNEXO (key: vlkniggas)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/obf_uam39VHkw5P5168Ao2yBVgFWZwbXo8TWilO4iK1Xj558jVcPVyrz1dBOej7Hn61B.lua.txt"))()
+   end,
+})
+
+Tab3:CreateButton({
+   Name = "FURNITURES OFFSALES/MOVEIS NAO A VENDA",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/OFFSALES"))()
+   end,
+})
+
+Rayfield:LoadConfiguration()
+		end
+	end
+
+	notification.Visible = true
+	for i = 1, 20 do
+		notification.TextTransparency = 1 - (i * 0.05)
+		notification.BackgroundTransparency = 1 - (i * 0.05)
+		wait(0.03)
+	end
+
+	wait(2)
+
+	for i = 1, 20 do
+		notification.TextTransparency = i * 0.05
+		notification.BackgroundTransparency = i * 0.05
+		wait(0.03)
+	end
+
+	introGui:Destroy()
+end)  local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local targetCFrame = CFrame.new(0, 0, 0)
+
+-- 🔊 Som da Explosão
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://6109827978"
+sound.Volume = 20
+sound.Parent = workspace
+
+-- 🚀 Modelo da Explosão
+local nukeModel = Instance.new("Model")
+nukeModel.Name = "GIGANTIC_NUKE"
+nukeModel.Parent = workspace
+
+local sphere = Instance.new("Part")
+sphere.Shape = Enum.PartType.Ball
+sphere.Size = Vector3.new(10, 10, 10)
+sphere.Color = Color3.fromRGB(255, 200, 0)
+sphere.Material = Enum.Material.Neon
+sphere.Anchored = true
+sphere.CanCollide = false
+sphere.Parent = nukeModel
+
+local fire = Instance.new("Fire")
+fire.Size = 200
+fire.Heat = 100
+fire.Color = Color3.fromRGB(255, 100, 0)
+fire.SecondaryColor = Color3.fromRGB(255, 255, 255)
+fire.Parent = sphere
+
+local smoke = Instance.new("ParticleEmitter")
+smoke.Texture = "rbxassetid://7712212245"
+smoke.Rate = 5000
+smoke.Lifetime = NumberRange.new(5, 8)
+smoke.Speed = NumberRange.new(30, 50)
+smoke.Size = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 50),
+	NumberSequenceKeypoint.new(1, 150)
+})
+smoke.Parent = sphere
+
+-- ❌ Explosão sem dano (BlastRadius e BlastPressure zero)
+local explosion = Instance.new("Explosion")
+explosion.Position = targetCFrame.Position
+explosion.BlastRadius = 0 -- Zero = não empurra e não destrói nada
+explosion.BlastPressure = 0
+explosion.DestroyJointRadiusPercent = 0
+explosion.Parent = workspace
+
+nukeModel.PrimaryPart = sphere
+nukeModel:SetPrimaryPartCFrame(targetCFrame)
+
+local growInfo = TweenInfo.new(2, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+local growTween = TweenService:Create(sphere, growInfo, {Size = Vector3.new(500, 500, 500)})
+growTween:Play()
+
+sound:Play()
+
+-- 🖼️ Imagem na Tela
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "ExplosionImageGui"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+local imageLabel = Instance.new("ImageLabel")
+imageLabel.Size = UDim2.new(1, 0, 1, 0)
+imageLabel.Position = UDim2.new(0, 0, 0, 0)
+imageLabel.BackgroundTransparency = 1
+imageLabel.Image = "rbxassetid://10657365561"
+imageLabel.ImageTransparency = 0
+imageLabel.Parent = screenGui
+
+local neonColor = Color3.fromRGB(255, 255, 255)
+local originalColors = {}
+local neonParts = {}
+
+for _, obj in pairs(workspace:GetDescendants()) do
+    if obj:IsA("BasePart") then
+        originalColors[obj] = {Color = obj.Color, Material = obj.Material}
+        obj.Material = Enum.Material.Neon
+        obj.Color = neonColor
+        table.insert(neonParts, obj)
+    end
+end
+
+task.wait(1)
+
+local fadeTween = TweenService:Create(imageLabel, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {ImageTransparency = 1})
+fadeTween:Play()
+
+task.delay(2, function()
+    if screenGui then
+        screenGui:Destroy()
+    end
+end)
+
+task.wait(5)
+
+for _, obj in ipairs(neonParts) do
+    local original = originalColors[obj]
+    if obj and obj.Parent and original then
+        local tween = TweenService:Create(obj, TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+            Color = original.Color
+        })
+        tween:Play()
+
+        task.delay(2, function()
+            if obj and obj.Parent then
+                obj.Material = original.Material
+            end
+        end)
+    end
+end
+
+task.delay(10, function()
+    if nukeModel then
+        nukeModel:Destroy()
+    end
+end) ScreenGui.Enabled = false end)
+
+-- Tornar arrastável local dragging local dragInput local dragStart local startPos
+
+local function update(input) local delta = input.Position - dragStart Frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y) end
+
+Frame.InputBegan:Connect(function(input) if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then dragging = true dragStart = input.Position startPos = Frame.Position
+
+input.Changed:Connect(function()
+        if input.UserInputState == Enum.UserInputState.End then
+            dragging = false
+        end
+    end)
+end
+
+end)
+
+Frame.InputChanged:Connect(function(input) if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then dragInput = input end end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input) if input == dragInput and dragging then update(input) end end)
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+-- Configuração do nome e tempo
+local NomeFalso = "卍卍 U N I T E D 卍卍"
+local CorTexto = Color3.fromRGB(255, 0, 0)
+local TempoDesaparecer = 4 -- segundos
+
+-- Função para criar o overhead temporário
+local function criarOverheadTemporario(player)
+    if player == LocalPlayer then return end
+    if not player.Character or not player.Character:FindFirstChild("Head") then return end
+
+    local bill = Instance.new("BillboardGui", player.Character.Head)
+    bill.Name = "UnitedOverhead"
+    bill.Size = UDim2.new(0, 200, 0, 50)
+    bill.StudsOffset = Vector3.new(0, 3, 0)
+    bill.AlwaysOnTop = true
+
+    local texto = Instance.new("TextLabel", bill)
+    texto.Size = UDim2.new(1, 0, 1, 0)
+    texto.BackgroundTransparency = 1
+    texto.Text = NomeFalso
+    texto.TextColor3 = CorTexto
+    texto.TextStrokeTransparency = 0
+    texto.TextScaled = true
+    texto.Font = Enum.Font.GothamBlack
+
+    -- Some suavemente após 4 segundos
+    game:GetService("TweenService"):Create(texto, TweenInfo.new(1), {TextTransparency = 1, TextStrokeTransparency = 1}):Play()
+    game:GetService("Debris"):AddItem(bill, TempoDesaparecer)
+end
+
+-- Aplica nos jogadores atuais
+for _, player in pairs(Players:GetPlayers()) do
+    criarOverheadTemporario(player)
+end
+
+-- Para quem entrar depois
+Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        wait(1)
+        criarOverheadTemporario(player)
+    end)
+end)
