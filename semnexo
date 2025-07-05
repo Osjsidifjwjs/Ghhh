@@ -1,0 +1,99 @@
+debugX = true
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/pauloplinioloko/Hhhray/refs/heads/main/Ray'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "U N I T E D  H U B",
+   Icon = 0,
+   LoadingTitle = "W E L C O M E  T O  H E L L",
+   LoadingSubtitle = "by semnexo (scripts credits: Zynlope,Joao)",
+   Theme = "semnexo", 
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false,
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "Big Hub"
+   },
+
+   Discord = {
+      Enabled = false,
+      Invite = "KQPZ8gtY", -- Apenas o código sem link!
+      RememberJoins = true
+   },
+
+   KeySystem = true,
+   KeySettings = {
+      Title = "SENHA/KEY",
+      Subtitle = " ",
+      Note = "KEY IN DISCORD",
+      FileName = "Key",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"nigga123"} -- Aqui você coloca sua key real se quiser
+   }
+})
+
+local Tab1 = Window:CreateTab("ZYNLOPE", 0)
+local Section1 = Tab1:CreateSection("ZYNLOPE SCRIPTS")
+
+Tab1:CreateButton({
+   Name = "SYNOLOPE 1",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/meepcityhmm/refs/heads/main/hmmmm"))()
+   end,
+})
+
+Tab1:CreateButton({
+   Name = "SYNOLOPE 2",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/synoloperevival/refs/heads/main/hmmmmm"))()
+   end,
+})
+
+Tab1:CreateButton({
+   Name = "FE R6 RIFLE ANIMATION MEEPCITY",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/rolezeay/rifle-animations/refs/heads/main/hmmmm"))()
+   end,
+})
+
+
+local Tab2 = Window:CreateTab("JOÃO", 0)
+local Section2 = Tab2:CreateSection("JOÃO SCRIPTS")
+
+Tab2:CreateButton({
+   Name = "MENU DO JOÃO",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/MENU%20DO%20JOAO"))()
+   end,
+})
+
+
+local Tab3 = Window:CreateTab("SEMNEXO", 0)
+local Section3 = Tab3:CreateSection("MY SCRIPTS")
+
+Tab3:CreateButton({
+   Name = "COPY BRASIL (key: anexo)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/obf_B3QHXvzaE4DAAgdwMFIJq3GGB59s8W60i7q4Qms1Vh6ZKK65qJkgaEZzjY8Wya1l.lua%20(1).txt"))()
+   end,
+})
+
+Tab3:CreateButton({
+   Name = "MENU SEMNEXO (key: vlkniggas)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/obf_uam39VHkw5P5168Ao2yBVgFWZwbXo8TWilO4iK1Xj558jVcPVyrz1dBOej7Hn61B.lua.txt"))()
+   end,
+})
+
+Tab3:CreateButton({
+   Name = "FURNITURES OFFSALES/MOVEIS NAO A VENDA",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/azetecasballas/.../refs/heads/main/OFFSALES"))()
+   end,
+})
+
+Rayfield:LoadConfiguration() 
