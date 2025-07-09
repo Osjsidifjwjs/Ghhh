@@ -4,7 +4,7 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/paul
 
 local Window = Rayfield:CreateWindow({
    Name = "U N I T E D  H U B",
-   Icon = 0,
+   Icon = 110406684895088,
    LoadingTitle = "W E L C O M E  T O  H E L L",
    LoadingSubtitle = "by semnexo (scripts credits: Zynlope,Joao)",
    Theme = "Diferenciado", 
