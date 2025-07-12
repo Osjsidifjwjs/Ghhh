@@ -30,7 +30,7 @@ local Window = Rayfield:CreateWindow({
       Subtitle = " ",
       Note = "KEY IN DISCORD",
       FileName = "Key",
-      SaveKey = true,
+      SaveKey = false,
       GrabKeyFromSite = false,
       Key = {"nigga123"} -- Aqui você coloca sua key real se quiser
    }
